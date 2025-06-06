@@ -1,0 +1,176 @@
+:root {
+  --cor-primaria: #6c63ff;
+  --cor-secundaria: #9b5de5;
+  --cor-terciaria: #c77dff;
+  --texto-claro: #f3f4f6;
+  --texto-escuro: #111827;
+  --gradiente-principal: linear-gradient(135deg, #6c63ff, #9b5de5, #c77dff);
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--texto-escuro);
+  background: var(--texto-claro);
+}
+
+.main-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  background: var(--gradiente-principal);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  transition: opacity 0.3s ease;
+}
+
+.header a:hover {
+  opacity: 0.8;
+}
+
+.banner {
+  background: var(--gradiente-principal);
+  color: white;
+  padding: 6rem 2rem;
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.banner-content h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.banner-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn {
+  background-color: white;
+  color: var(--cor-primaria);
+  padding: 1rem 2.5rem;
+  border-radius: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background-color: var(--cor-terciaria);
+  color: white;
+}
+
+.secao {
+  padding: 4rem 2rem;
+  text-align: center;
+  color: white;
+}
+
+.secao-sobre {
+  background: linear-gradient(135deg, #6c63ff 0%, #8b5de5 100%);
+}
+
+.secao-programacao {
+  background: linear-gradient(135deg, #8b5de5 0%, #aa6fff 100%);
+}
+
+.secao-localizacao {
+  background: linear-gradient(135deg, #aa6fff 0%, #c77dff 100%);
+}
+
+.secao-inscricao {
+  background: var(--cor-terciaria);
+  color: var(--texto-escuro);
+}
+
+.secao-inscricao form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.secao-inscricao input {
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.secao-inscricao button {
+  background-color: var(--cor-primaria);
+  color: white;
+  font-weight: 700;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.secao-inscricao button:hover {
+  background-color: var(--cor-secundaria);
+}
+
+.footer {
+  background-color: var(--texto-escuro);
+  color: white;
+  text-align: center;
+  padding: 1rem 2rem;
+  font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .header ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .banner-content h2 {
+    font-size: 2rem;
+  }
+  .banner-content p {
+    font-size: 1rem;
+  }
+  .secao {
+    padding: 3rem 1rem;
+  }
+  .secao-inscricao form {
+    max-width: 100%;
+  }
+}
