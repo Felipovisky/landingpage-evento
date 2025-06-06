@@ -3,8 +3,12 @@ function atualizarContador() {
   const agora = new Date().getTime();
   const tempoRestante = dataEvento - agora;
 
+  const timerEl = document.getElementById("timer");
+
+  if (!timerEl) return;
+
   if (tempoRestante <= 0) {
-    document.getElementById("timer").innerText = "O evento começou!";
+    timerEl.innerText = "O evento começou!";
     clearInterval(intervalo);
     return;
   }
@@ -14,7 +18,11 @@ function atualizarContador() {
   const minutos = Math.floor((tempoRestante % (1000 * 60 * 60)) / (1000 * 60));
   const segundos = Math.floor((tempoRestante % (1000 * 60)) / 1000);
 
-  document.getElementById("timer").innerText = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
+  timerEl.innerText = `${dias}d ${horas}h ${minutos}m ${segundos}s`;
 }
 
+// Chamada inicial para não esperar 1 segundo para aparecer o contador
+atualizarContador();
+
+// Atualiza a cada segundo
 const intervalo = setInterval(atualizarContador, 1000);
